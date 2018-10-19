@@ -15,13 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from api.resources import AllUsers, GroupTest
+from api.resources import AllUsers
 
 all_users = AllUsers()
-group_test = GroupTest()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(all_users.urls)),
-    path('api/', include(group_test.urls)),
 ]

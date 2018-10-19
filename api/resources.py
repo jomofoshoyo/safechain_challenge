@@ -8,9 +8,3 @@ class AllUsers(ModelResource):
         queryset = User.objects.all()
         resource_name = 'users'
         authorization = Authorization()
-
-
-class GroupTest(ModelResource):
-    class Meta:
-        queryset = User.objects.get(id=2).groups.all()
-        resource_name = 'groups'
